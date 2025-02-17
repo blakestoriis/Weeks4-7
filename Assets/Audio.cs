@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class clock : MonoBehaviour
+public class Audio : MonoBehaviour
 {
-    
-    public float speed;
+    public AudioSource chime;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +15,15 @@ public class clock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 clock = transform.eulerAngles;
-        clock.z -= speed; //sets rotation speed
 
+        Vector3 clock = transform.eulerAngles; 
+        if (clock.z == clock.z % 30)
+        {
+            if (!chime.isPlaying)
+            {
+                chime.Play();
+            }
+        }
         transform.eulerAngles = clock;
-
     }
 }
