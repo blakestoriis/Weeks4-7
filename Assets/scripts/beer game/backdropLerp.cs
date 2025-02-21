@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class backdropLerp : MonoBehaviour
 {
-    [Range(0, 1)]
-    public float t;
-    public AnimationCurve curve;
     public Vector2 start;
     public Vector2 end;
 
@@ -20,7 +18,13 @@ public class backdropLerp : MonoBehaviour
     void Update()
     {
 
-        t = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = Vector2.Lerp(start, end, curve.Evaluate(t));
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // sets mouse position
+        transform.position = Vector2.Lerp(start, end, mousePos.x / 16 + 0.5f); // lerp maps the start and end and the mouse controls moving from start to end
+
+
+        Vector3 pos = transform.position;
+
+        transform.position = pos;
     }
 }
