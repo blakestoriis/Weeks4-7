@@ -14,7 +14,7 @@ public class timer1 : MonoBehaviour
 
     public float beersPerClick; // how many beers per player click
 
-    public float upgradeCost; //how much thenext upgrade costs
+    public float upgradeCost; //how much the next upgrade costs
     public float upgradeRate; //how many beers per second the upgrade gives
 
     // Start is called before the first frame update
