@@ -90,7 +90,7 @@ public class timer1 : MonoBehaviour
             beersPerClick += upgradeRate2; //increases beers per click by the rate
 
             upgradeCost2 += upgradeCost2; //cost doubles
-            upgradeRate2 += upgradeRate2; //rate doubles
+            upgradeRate2 += 1; //rate increases by 1
 
 
         }

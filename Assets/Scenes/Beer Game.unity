@@ -1079,7 +1079,7 @@ MonoBehaviour:
   score: 1
   beersPerSecond: 1
   beersPerClick: 1
-  upgradeCost: 50
+  upgradeCost: 500
   upgradeRate: 1
   upgradeCost2: 20
   upgradeRate2: 1
